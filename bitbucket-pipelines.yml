@@ -1,0 +1,14 @@
+image: python:3.8-buster
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          name: potatoweather
+          max-time: 10  # timeout after 10 minutes
+          caches:
+            - pip
+          script:
+            - pip install -r tests/requirements-test.txt --quiet --disable-pip-version-check
+            - pip install -e . --quiet --disable-pip-version-check --no-cache-dir --no-deps
+            - pytest -vvvv --cov=. --cov-config=tests/.coveragerc -W ignore::DeprecationWarning --cov-fail-under=50

@@ -1,0 +1,26 @@
+*secrets.env
+*test.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+.Python
+*.DS_Store
+*.egg-info/
+.idea/
+
+# local dir used for dumping output
+*dev/null/*
+
+# .terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
